@@ -1,6 +1,6 @@
-# DevOps_Assignment
+# DevOps Assignment
 
-I set up automated Telegram chatbot messaging in response to push event to this repository using Github Actions. Whenever some files are pushed into the repository, the actions described in a YAML file (tmessage.yml) in the folder **.github/workflows** will be executed. The expected message from the bot is as follows:
+I set up automated Telegram chatbot messaging in response to push event to this repository using Github Actions. Whenever some files are pushed into the repository, the actions described in a YAML file (tmessage.yml) in the folder `.github/workflows` will be executed. The expected message from the bot is as follows:
 
 > **Good day, ias-9! There was a push event in ias-9/DevOps_Assignment.**
 
@@ -8,11 +8,11 @@ The steps I took to complete this job were as follows:
 
 1. Create a new Github repository
 
-2. Create a Telegram bot by messaging [@BotFather](https://web.telegram.org/#/im?p=@BotFather), typing in /newbot and following the instructions
+2. Create a Telegram bot by messaging [@BotFather](https://web.telegram.org/#/im?p=@BotFather), typing in `/newbot` and following the instructions
 
 3. Start the newly created bot by pressing on the link sent by @BotFather
 
-4. Create a YAML file in the folder .github/workflows containing instructions for Github actions to send message through the bot. Change the 'args' in the last line to 'message' and modify the message to my liking. The instructions are as follows:
+4. Create a YAML file in the folder `.github/workflows` containing instructions for Github actions to send message through the bot. Change the `args:` in the last line to `message:` and modify the message to my liking. The instructions are as follows:
 ```yml
 name: telegram message
 on: [push]
@@ -31,7 +31,7 @@ jobs:
           args: The ${{ github.event_name }} event triggered first step.
 ```
 
-5. Set up secrets for TELEGRAM_TO and TELEGRAM_TOKEN so that Github Actions can access these values to use the bot and send message to my number. The token (TELEGRAM_TOKEN) is provided by @BotFather and the chat ID (TELEGRAM_TO) can be seen from https://api.telegram.org/bot/getUpdates by pasting the bot token after /bot
+5. Set up secrets for `TELEGRAM_TO` and `TELEGRAM_TOKEN` so that Github Actions can access these values to use the bot and send message to my number. The token `TELEGRAM_TOKEN` is provided by @BotFather and the chat ID `TELEGRAM_TO` can be seen from https://api.telegram.org/bot/getUpdates by pasting the bot token between `/bot` and `/getUpdates`.
   
 6. Push a file into the repository to try out this function and check for completion in the **Actions** tab above and in the Telegram chat with the bot
 
