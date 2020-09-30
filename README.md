@@ -1,6 +1,6 @@
 # DevOps Assignment
 
-I set up automated Telegram chatbot messaging in response to push events to this repository using Github Actions. Whenever some files are pushed into or changed in the repository, the actions described in a YAML file (tmessage.yml) in the folder `.github/workflows` will be executed. The expected message from the bot is as follows:
+I set up automated Telegram chatbot messaging in response to push events to this repository using Github Actions. Whenever a new commit is pushed in the repository, the actions described in a YAML file (tmessage.yml) in the folder `.github/workflows` will be executed. The expected message from the bot is as follows:
 
 > **Good day, ias-9! There was a push event in ias-9/DevOps_Assignment.**
 
